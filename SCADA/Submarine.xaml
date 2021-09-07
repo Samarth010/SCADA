@@ -1,0 +1,17 @@
+﻿<Window x:Class="SCADA.Submarine"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SCADA"
+        mc:Ignorable="d"
+        Title="SCADA" Height="726" Width="1188" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+        
+        <Image Source="submarine.png" HorizontalAlignment="Left" Height="726" VerticalAlignment="Top" Width="1188" Stretch="Fill"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="904,537,0,0" VerticalAlignment="Top" Width="108" Height="59" Background="{x:Null}" Click="Button_Click"/>
+        <Menu  Height="20px" VerticalAlignment="Top">
+            <MenuItem Header="Exit" x:Name="menuItemExit" Click="menuItemExit_Click"></MenuItem>
+        </Menu>
+    </Grid>
+</Window>

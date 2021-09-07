@@ -1,0 +1,321 @@
+﻿<Window x:Class="SCADA.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SCADA"
+        mc:Ignorable="d"
+        Title="SCADA System" Height="762.4" Width="1204" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" ResizeMode="CanMinimize">
+    <Grid>
+
+        <Grid>
+
+        </Grid>
+        <Image Source="Tank.png" HorizontalAlignment="Left" Height="726" VerticalAlignment="Top" Width="1188" Stretch="UniformToFill"/>
+        <Menu  Height="20px" VerticalAlignment="Top">
+            <MenuItem Header="Manual" x:Name="menuItemManual" Click="menuItemManual_Click"></MenuItem>
+            <MenuItem Header="Go Back" x:Name="menuItemGoBack" Click="menuItemGoBack_Click"></MenuItem>
+            <MenuItem Header="Exit" x:Name="menuItemExit" Click="menuItemExit_Click"></MenuItem>
+        </Menu>
+        <Grid>
+            <Button x:Name="btn_maintank" 
+                HorizontalAlignment="Left" 
+                Margin="338,76,0,0" 
+                VerticalAlignment="Top" 
+                Width="11" 
+                Height="40"
+                Background="Transparent" 
+                Click="btn_maintank_Click"/>
+
+            <Button x:Name="btn_tank1" 
+                HorizontalAlignment="Left" 
+                Margin="178,364,0,0" 
+                VerticalAlignment="Top" 
+                Width="11" 
+                Height="32"
+                Background="Transparent" 
+                Click="btn_tank1_Click"/>
+
+            <Button x:Name="btn_tank2" 
+                HorizontalAlignment="Left" 
+                Margin="365,364,0,0" 
+                VerticalAlignment="Top" 
+                Width="11" 
+                Height="32"
+                Background="Transparent" />
+
+            <Button x:Name="btn_tank3" 
+                HorizontalAlignment="Left" 
+                Margin="553,364,0,0" 
+                VerticalAlignment="Top" 
+                Width="11" 
+                Height="32"
+                Background="Transparent" />
+
+            <Button x:Name="btn_tank4" 
+                HorizontalAlignment="Left" 
+                Margin="741,364,0,0" 
+                VerticalAlignment="Top" 
+                Width="11" 
+                Height="32"
+                Background="Transparent" />
+
+            <Button x:Name="btn_tank5" 
+                HorizontalAlignment="Left" 
+                Margin="929,364,0,0" 
+                VerticalAlignment="Top" 
+                Width="11" 
+                Height="32"
+                Background="Transparent" />
+
+            <Button x:Name="btn_tank6" 
+                HorizontalAlignment="Left" 
+                Margin="1116,364,0,0" 
+                VerticalAlignment="Top" 
+                Width="11" 
+                Height="32"
+                Background="Transparent" />
+
+
+
+
+            <Label x:Name="lbl_statusmaintank"
+                Content="Closed" 
+               HorizontalAlignment="Left"
+               Margin="377,79,0,0" 
+               VerticalAlignment="Top" 
+               Height="31" 
+               Width="69" 
+               FontSize="16" 
+               FontWeight="ExtraBold"
+               Foreground="Black"
+               Background="LightGray" 
+               FontFamily="Arial"
+               />
+            <Label x:Name="lbl_statustank1"
+               Content="Closed" 
+               HorizontalAlignment="Left" 
+               Margin="91,405,0,0" 
+               VerticalAlignment="Top" 
+               Height="26" 
+               Width="71" 
+               FontSize="16"
+               FontWeight="ExtraBold"
+               Foreground="Black"
+               Background="LightGray" 
+               FontFamily="Arial"/>
+
+            <Label x:Name="lbl_statustank2"
+               Content="Closed" 
+               HorizontalAlignment="Left" 
+               Margin="278,403,0,0" 
+               VerticalAlignment="Top"
+               Height="26" 
+               Width="71" 
+               FontSize="16"
+               FontWeight="ExtraBold"
+               Foreground="Black"
+               Background="LightGray" 
+               FontFamily="Arial"/>
+
+            <Label x:Name="lbl_statustank3"
+               Content="Closed" 
+               HorizontalAlignment="Left" 
+               Margin="468,403,0,0" 
+               VerticalAlignment="Top"
+               Height="26" 
+               Width="71" 
+               FontSize="16"
+               FontWeight="ExtraBold"
+               Foreground="Black"
+               Background="LightGray" 
+               FontFamily="Arial"/>
+
+            <Label x:Name="lbl_statustank4"
+               Content="Closed" 
+               HorizontalAlignment="Left" 
+               Margin="654,403,0,0" 
+               VerticalAlignment="Top"
+               Height="26" 
+               Width="71" 
+               FontSize="16"
+               FontWeight="ExtraBold"
+               Foreground="Black"
+               Background="LightGray" 
+               FontFamily="Arial"/>
+
+            <Label x:Name="lbl_statustank5"
+               Content="Closed" 
+               HorizontalAlignment="Left" 
+               Margin="842,403,0,0" 
+               VerticalAlignment="Top"
+               Height="26" 
+               Width="71" 
+               FontSize="16"
+               FontWeight="ExtraBold"
+               Foreground="Black"
+               Background="LightGray" 
+               FontFamily="Arial"/>
+
+            <Label x:Name="lbl_statustank6"
+               Content="Closed" 
+               HorizontalAlignment="Left" 
+               Margin="1030,403,0,0" 
+               VerticalAlignment="Top"
+               Height="26" 
+               Width="71" 
+               FontSize="16"
+               FontWeight="ExtraBold"
+               Foreground="Black"
+               Background="LightGray" 
+               FontFamily="Arial"/>
+
+
+            <local:Valve x:Name="lblTank1Level" 
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Left"
+                   Margin="102,333,0,0"
+                   VerticalContentAlignment="Center"
+                   HorizontalContentAlignment="Center"
+                   Width="50" Height="40" FontSize="12.5" FontWeight="SemiBold"
+                   ></local:Valve>
+
+            <local:Valve x:Name="lblTank2Level" 
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Left"
+                   Margin="289,333,0,0"
+                   VerticalContentAlignment="Center"
+                   HorizontalContentAlignment="Center"
+                   Width="50" Height="40"
+                         FontSize="12.5" FontWeight="SemiBold"
+                   ></local:Valve>
+
+            <local:Valve x:Name="lblTank3Level" 
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Left"
+                   Margin="477,333,0,0"
+                   VerticalContentAlignment="Center"
+                   HorizontalContentAlignment="Center"
+                   Width="50" Height="40"
+                         FontSize="12.5" FontWeight="SemiBold"
+                   ></local:Valve>
+
+
+            <local:Valve x:Name="lblTank4Level" 
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Left"
+                   Margin="665,333,0,0"
+                   VerticalContentAlignment="Center"
+                   HorizontalContentAlignment="Center"
+                   Width="50" Height="40"
+                         FontSize="12.5" FontWeight="SemiBold"
+                   ></local:Valve>
+
+            <local:Valve x:Name="lblTank5Level" 
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Left"
+                   Margin="852,332,0,0"
+                   VerticalContentAlignment="Center"
+                   HorizontalContentAlignment="Center"
+                   Width="50" Height="40"
+                         FontSize="12.5" FontWeight="SemiBold"
+                   />
+
+            <local:Valve x:Name="lblTank6Level" 
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Left"
+                   Margin="1040,333,0,0"
+                   VerticalContentAlignment="Center"
+                   HorizontalContentAlignment="Center"
+                   Width="50" Height="40"
+                         FontSize="12.5" FontWeight="SemiBold"
+                   >
+            </local:Valve>
+
+            <Label x:Name="lblWatch" 
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Right"
+                Margin="0,0,70.6,643.8" FontSize="14" FontWeight="Bold" />
+
+        </Grid>
+        <local:Valve  x:Name="lbl_alert" Visibility="Hidden" Content="Alert!!!" Foreground="Red" FontSize="48" FontWeight="Bold" FontFamily="Arial" HorizontalAlignment="Left" Margin="58,106,0,0" VerticalAlignment="Top" Width="208">
+        </local:Valve>
+        <Label Content="Tank-1" HorizontalAlignment="Left" Margin="58,527,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="211" Height="28" Background="#FF7A6464" BorderBrush="#FF080404" Foreground="#FFFFEEEE" FontWeight="Bold" FontSize="11">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.94"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Tank-2" HorizontalAlignment="Left" Margin="249,526,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="211" Height="28" Background="#FF7A6464" BorderBrush="#FF080404" Foreground="#FFFFEEEE" FontWeight="Bold" FontSize="11">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.94"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Tank-3" HorizontalAlignment="Left" Margin="437,526,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="211" Height="28" Background="#FF7A6464" BorderBrush="#FF080404" Foreground="#FFFFEEEE" FontWeight="Bold" FontSize="11">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.94"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Tank-4" HorizontalAlignment="Left" Margin="624,526,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="211" Height="28" Background="#FF7A6464" BorderBrush="#FF080404" Foreground="#FFFFEEEE" FontWeight="Bold" FontSize="11">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.94"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Tank-5" HorizontalAlignment="Left" Margin="812,525,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="211" Height="28" Background="#FF7A6464" BorderBrush="#FF080404" Foreground="#FFFFEEEE" FontWeight="Bold" FontSize="11">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.94"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Tank-6" HorizontalAlignment="Left" Margin="1001,525,-14.4,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="211" Height="28" Background="#FF7A6464" BorderBrush="#FF080404" Foreground="#FFFFEEEE" FontWeight="Bold" FontSize="11">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.94"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Main Oxygen Tank" Foreground="White" HorizontalAlignment="Left" Margin="474,140,0,0" VerticalAlignment="Top" Height="44" Width="235" FontSize="24" FontWeight="Bold"/>
+        <Image Source="caution.png" HorizontalAlignment="Left" Height="42" Margin="660,209,0,0" VerticalAlignment="Top" Width="49"/>
+        <Label Content="Label" Background="Red" Foreground="Red" HorizontalAlignment="Left" Margin="58,72,0,0" VerticalAlignment="Top"/>
+        <Label Content="Label" Background="Green" Foreground="Green"  HorizontalAlignment="Left" Margin="58,103,0,0" VerticalAlignment="Top"/>
+        <Label Content="Pressure Low/High" HorizontalAlignment="Left" Margin="111,72,0,0" VerticalAlignment="Top" Width="139" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Pressure Normal" HorizontalAlignment="Left" Margin="111,100,0,0" VerticalAlignment="Top" Width="139" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Tank Pressure Information" HorizontalAlignment="Left" Margin="49,42,0,0" VerticalAlignment="Top" Height="105" Width="201" FontWeight="Bold" FontSize="14" BorderBrush="Black" BorderThickness="2"/>
+        <!-- <Canvas HorizontalAlignment="Left" Height="207" Margin="154,437,0,0" VerticalAlignment="Top" Width="23">
+            <Image x:Name="img_bluetank1"
+                HorizontalAlignment="Left"
+                Height="208"
+                VerticalAlignment="Top"
+                Width="23"
+                Source="Blue.png" Stretch="Fill"
+                />
+        </Canvas> -->
+
+    </Grid>
+</Window>
